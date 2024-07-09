@@ -1,18 +1,38 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Chatbot</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
-	<div class="chat-container">
-		<div class="chat-header">Chatbot</div>
-		<div class="chat-messages">
-			<div class="message" id="welcome-message">Welcome to the chatbot! What's on your mind?</div>
-              <input type="text" id="user-input" placeholder="Type your message...">
-        <br> <div> <br> <button id="send-button">Send</button> </div>
-  </div>
+const chatContainer = document.querySelector('.chat-container');
+const chatMessages = document.querySelector('.chat-messages');
+const userInput = document.querySelector('#user-input');
+const sendButton = document.querySelector('#send-button');
+
+let conversation = [];
+
+sendButton.addEventListener('click', handleUserInput);
+
+function handleUserInput() {
+	const userMessage = userInput.value;
+	conversation.push({ user: userMessage });
+	displayMessage(userMessage, 'user');
 	
-	<script src="script.js"></script>
-</body>
-</html>
+	const response = getResponse(userMessage);
+	conversation.push({ bot: response });
+	displayMessage(response, 'bot');
+	
+	userInput.value = '';
+}
+
+function getResponse(userMessage) {
+ if (userMessage.includes('hello')) {
+		return 'Hello! How are you today?';
+	} else if (userMessage.includes('help')) {
+		return 'I\'m here to help! What do you need assistance with?'; 
+    } else if (userMessage.includes('cello')) {
+      return 'zxc?';
+	} else {
+		return 'I understand. Please provide more information.';
+} 
+}
+
+function displayMessage(message, type) {
+	const messageHTML = `<div class="message ${type}">${message}</div>`;
+	chatMessages.insertAdjacentHTML('beforeend', messageHTML);
+	chatContainer.scrollTop = chatContainer.scrollHeight;
+}
