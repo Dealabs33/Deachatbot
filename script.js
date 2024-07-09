@@ -27,7 +27,7 @@ function getResponse(userMessage) {
     } else if (userMessage.includes('cello')) {
       return 'zxc?';
 	} else {
-		return 'I understand. Please provide more information.';
+		return 'I dont understand. Please provide more information.';
 } 
 }
 
@@ -36,3 +36,4 @@ function displayMessage(message, type) {
 	chatMessages.insertAdjacentHTML('beforeend', messageHTML);
 	chatContainer.scrollTop = chatContainer.scrollHeight;
 }
+
