@@ -27,7 +27,7 @@ function getResponse(userMessage) {
     } else if (userMessage.includes('cello')) {
       return 'zxc?';
 	} else {
-		return 'I dont understand. Please provide more information.';
+		return ' try again this has not been added to my memmory.';
 } 
 }
 
