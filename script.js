@@ -29,6 +29,9 @@ function getResponse(userMessage) {
      } else if 
 (userMessage.includes('1+1')) {
     return '2';
+ } else if 
+(userMessage.includes('how are you')) {
+  return 'i'm fine buddy,how about you'; 
 	} else {
 		return ' try again this has not been added to my memory.';
 } 
