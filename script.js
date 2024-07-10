@@ -27,7 +27,7 @@ function getResponse(userMessage) {
     } else if (userMessage.includes('hey')) {
       return 'whats up for today?';
      } else if 
-(userMessage.includes('1+1') {
+(userMessage.includes('1+1')) {
     return '2';
 	} else {
 		return ' try again this has not been added to my memory.';
