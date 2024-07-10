@@ -24,10 +24,13 @@ function getResponse(userMessage) {
 		return 'Hello! How are you today?';
 	} else if (userMessage.includes('help')) {
 		return 'I\'m here to help! What do you need assistance with?'; 
-    } else if (userMessage.includes('cello')) {
-      return 'zxc?';
+    } else if (userMessage.includes('hey')) {
+      return 'whats up for today?';
+     } else if 
+(userMessage.includes('1+1')) {
+    return '2';
 	} else {
-		return ' try again this has not been added to my memmory.';
+		return ' try again this has not been added to my memory.';
 } 
 }
 
